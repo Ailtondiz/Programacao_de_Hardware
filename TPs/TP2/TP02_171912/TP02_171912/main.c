@@ -125,9 +125,9 @@ int main(void){
 					else if(pin == 6){
 						DDRC |= (1 << DDC6);
 					}
-					PORTC |= (0 << pin); /** liga lampada. **/
+					PORTC |= (1 << pin); /** liga lampada. **/
 					_delay_ms(10000); /** delay de 10s. **/
-					PORTC &= (0 << pin); /** desliga lampada. **/
+					PORTC &= (1 << pin); /** desliga lampada. **/
 					break;
 			
 				case 'D' :
@@ -155,9 +155,9 @@ int main(void){
 					else if(pin == 7){
 						DDRD |= (1 << DDD7);
 					}
-					PORTD |= (0 << pin); /** liga lampada. **/
+					PORTD |= (1 << pin); /** liga lampada. **/
 					_delay_ms(10000); /** delay de 10s. **/
-					PORTD &= (0 << pin); /** desliga lampada. **/
+					PORTD &= (1 << pin); /** desliga lampada. **/
 		}
 	};
 };

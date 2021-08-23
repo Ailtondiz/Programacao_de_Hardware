@@ -109,23 +109,23 @@ Disassembly of section .text:
   ae:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
 
 000000b2 <main>:
-int x; // variavel de controle.
+int x; 
 
-int main(void){
-	while(1){ //mantem o programa em loop.
+int main(void){ 
+	while(1){ /**mantem o programa em loop. **/
 		
-		printf("Aviso: A porta/Pino B0 está didicada para leitura do sensor !!! \nA porta C só possui 6 pinos \n"); //Aviso
+		printf("Aviso: A porta/Pino B0 está didicada para leitura do sensor !!! \nA porta C só possui 6 pinos \n"); /** Aviso **/
   b2:	83 e0       	ldi	r24, 0x03	; 3
   b4:	91 e0       	ldi	r25, 0x01	; 1
   b6:	0e 94 a4 00 	call	0x148	; 0x148 <puts>
 		
-		printf("Entre com a letra da porta que a Lampada esta conectada (A, B ou C): "); // Solicita a entrada do dados para o usuario.
+		printf("Entre com a letra da porta que a Lampada esta conectada (A, B ou C): "); /** Solicita a entrada do dados para o usuario. **/
   ba:	81 e6       	ldi	r24, 0x61	; 97
   bc:	91 e0       	ldi	r25, 0x01	; 1
   be:	9f 93       	push	r25
   c0:	8f 93       	push	r24
   c2:	0e 94 8e 00 	call	0x11c	; 0x11c <printf>
-		scanf("%c", &port); // Armazena a entrada da string no campo porta2 da struct usuario.
+		scanf("%c", &port); /** Armazena a entrada da porta do usuario. **/
   c6:	82 e0       	ldi	r24, 0x02	; 2
   c8:	91 e0       	ldi	r25, 0x01	; 1
   ca:	9f 93       	push	r25
@@ -136,13 +136,13 @@ int main(void){
   d4:	8f 93       	push	r24
   d6:	0e 94 d4 00 	call	0x1a8	; 0x1a8 <scanf>
 		
-		printf("Entre com o numero do pino que a Lampada esta conectada (de 0 a 7): "); // Solicita a entrada do dados para o usuario.
+		printf("Entre com o numero do pino que a Lampada esta conectada (de 0 a 7): "); /** Solicita a entrada do dados para o usuario. **/
   da:	8a ea       	ldi	r24, 0xAA	; 170
   dc:	91 e0       	ldi	r25, 0x01	; 1
   de:	9f 93       	push	r25
   e0:	8f 93       	push	r24
   e2:	0e 94 8e 00 	call	0x11c	; 0x11c <printf>
-		scanf("%d", &pin);
+		scanf("%d", &pin); /** Armazena a entrada do pino do usuario. **/
   e6:	80 e0       	ldi	r24, 0x00	; 0
   e8:	91 e0       	ldi	r25, 0x01	; 1
   ea:	9f 93       	push	r25
@@ -158,7 +158,7 @@ int main(void){
   fc:	90 e0       	ldi	r25, 0x00	; 0
   fe:	90 93 f3 01 	sts	0x01F3, r25	; 0x8001f3 <__data_end+0x1>
  102:	80 93 f2 01 	sts	0x01F2, r24	; 0x8001f2 <__data_end>
-		while(x) //Permite a leitura da porta/pino ate que haja uma presença.
+		while(x) /** Permite a leitura da porta/pino ate que haja uma presenca. **/
  106:	8d b7       	in	r24, 0x3d	; 61
  108:	9e b7       	in	r25, 0x3e	; 62
  10a:	0c 96       	adiw	r24, 0x0c	; 12
@@ -167,7 +167,7 @@ int main(void){
  110:	9e bf       	out	0x3e, r25	; 62
  112:	0f be       	out	0x3f, r0	; 63
  114:	8d bf       	out	0x3d, r24	; 61
-		estadoPino = PINB0; //Le estado do pino B0 que esta ligado ao sensor, 0 para sem leitura de presenca e 1 para leitura de presenca
+		estadoPino = PINB0; /** Le estado do pino B0 que esta ligado ao sensor, 0 para sem leitura de presenca e 1 para leitura de presenca. **/
  116:	10 92 f4 01 	sts	0x01F4, r1	; 0x8001f4 <estadoPino>
  11a:	fd cf       	rjmp	.-6      	; 0x116 <main+0x64>
 
